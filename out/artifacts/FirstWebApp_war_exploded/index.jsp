@@ -8,9 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>Login Page</title>
   </head>
   <body>
-  $END$
+  <form action="/kt/account" method="post">
+    <input type="text" name="username" placeholder="Имя пользователя" required>
+    <input type="password" name="password" placeholder="Пароль" required>
+    <input class="button" type="submit">
+  </form>
   </body>
 </html>

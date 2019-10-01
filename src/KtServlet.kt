@@ -14,4 +14,14 @@ class KtServlet : HttpServlet() {
             )
         }
     }
+
+    override fun doPost(req: HttpServletRequest, resp: HttpServletResponse) {
+        if(req.pathInfo != "/account")
+        if(req.getParameter("username") == req.getParameter("password").reversed()) {
+            req.setAttribute("authOk", true)
+        } else {
+            req.setAttribute("authOk", false)
+        }
+        req.getRequestDispatcher("/account.jsp").forward(req, resp)
+    }
 }
